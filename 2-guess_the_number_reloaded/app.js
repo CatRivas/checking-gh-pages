@@ -1,18 +1,3 @@
-//Usando el DOM (Document Object Model)
-
-//accediendo a los elementos
-// let titulo = document.querySelector('h1');
-// let parrafo = document.getElementsByClassName("texto__parrafo")[0];
-
-//modificando los elementos
-//Tengo dos maneras de hacerlo y ambas proiedades hacen lo mismo pero con diferencias
-//.textContent reemplaza el contenido con texto plano pero.innerHTML inserta texto con etiquetas HTML
-// titulo.textContent = 'GUESS THE NUMBER'; //es mas seguro
-// titulo.innerHTML = 'GUESS THE NUMBER'; // no lo uses a menos q quieras poner etiquetas con el texto (por ejemplo:'<strong>GUESS</strong> THE NUMBER') pq tiene riesgos de seguridad como inyección de HTML malicioso.
-
-// parrafo.textContent = 'Bitch put a number';
-
-// //Refactorizando el codigo de arriba
 let pcRandomNumber = 0;
 let tryCounter = 0;
 let endRange = 10;
@@ -27,8 +12,6 @@ function textToELement(element, text) {
 
 function randomNumberGenerator() {
     let generatedNumber = Math.floor(Math.random() * endRange) + 1;
-    // si todos los numeros dentro del rango han sido generados me sale un error de recursividad 'RangeError: Maximum call stack size exceeded'
-    // por lo q agrego una condicion con la q avisare al user q todos los numeros dentro del rango elegido ya han salido y q necesita reiniciar el juego.
     if (generatedNumbers.length === endRange) {
         textToELement('p', 'All possible numbers have been generated. Reset the game.');
 
@@ -41,7 +24,7 @@ function randomNumberGenerator() {
         document.getElementById('reload_game_button').style.display = 'block';
         
     } else {
-        // si el numero ya existe en el array, generamos otro (lit vuelves a llamar a la funcion en la q estas 'RECURSION')
+        // si el numero ya existe en el array, generamos otro 
         if (generatedNumbers.includes(generatedNumber)) {
             return randomNumberGenerator();
         } else {
@@ -64,7 +47,6 @@ function initialConditions() {
 }
 
 
-// es el evento q ocurrira si das click en el boton Try
 function compareNumbers() {
     let userInput = parseInt(document.getElementById('user_input').value);
     // console.log(userInput);
