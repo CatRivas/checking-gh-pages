@@ -30,7 +30,7 @@ function randomNumberGenerator() {
         } else {
             //agrego cada numero en la lista de numeros generados y retorno el numero 
             generatedNumbers.push(generatedNumber);
-            console.log(generatedNumbers);
+            // console.log(generatedNumbers);
             return generatedNumber;
         }
     } 
@@ -39,11 +39,11 @@ function randomNumberGenerator() {
 
 function initialConditions() {
     textToELement('h1', 'GUESS THE NUMBER');
-    textToELement('p', `Bitch put a number from 1-${endRange}`);
+    textToELement('p', `Put a number from 1-${endRange}`);
     pcRandomNumber = randomNumberGenerator(); 
     tryCounter = 1;
 
-    console.log(pcRandomNumber);
+    // console.log(pcRandomNumber);
 }
 
 
