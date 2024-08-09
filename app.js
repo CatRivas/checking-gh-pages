@@ -13,7 +13,7 @@ function textToELement(element, text) {
 function randomNumberGenerator() {
     let generatedNumber = Math.floor(Math.random() * endRange) + 1;
     if (generatedNumbers.length === endRange) {
-        textToELement('p', 'All possible numbers have been generated. Reset the game.');
+        textToELement('p', 'All possible numbers have been generated. Reload the game.');
 
         //Ocultando los botones de 'Try' y 'New Game' y el textfield
         document.getElementById('user_input').style.display = 'none';
