@@ -38,7 +38,7 @@ function randomNumberGenerator() {
 
 
 function initialConditions() {
-    textToELement('h1', 'GUESS THE F NUMBER');
+    textToELement('h1', 'GUESS THE NUMBER');
     textToELement('p', `Put a number from 1-${endRange}`);
     pcRandomNumber = randomNumberGenerator(); 
     tryCounter = 1;
